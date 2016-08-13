@@ -2,12 +2,14 @@ var express = require('express');
 
 var app = module.exports = express();
 
+app.set('view engine', 'pug');
 app.set('views', __dirname + '/app');
-app.set('view engine', 'jade');
-app.locals.basedir = __dirname;
 
-app.get('/', function (req, res) {
-  res.render('index', {myVar: {asdf: 'global var'}});
+app.get('/var', function (req, res) {
+  res.render('var/index', {myVar: 'global var'});
+});
+app.get('/block', function (req, res) {
+  res.render('block/index', {myVar: { foo: 'bar' }});
 });
 
 var port = 5000;
