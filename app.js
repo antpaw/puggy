@@ -2,7 +2,7 @@ var express = require('express');
 
 var app = module.exports = express();
 
-app.set('view engine', 'pug');
+app.set('view engine', 'jade');
 app.set('views', __dirname + '/app');
 
 app.get('/var', function (req, res) {
