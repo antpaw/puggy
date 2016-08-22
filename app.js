@@ -11,6 +11,9 @@ app.get('/var', function (req, res) {
 app.get('/block', function (req, res) {
   res.render('block/index', {myVar: { foo: 'bar' }});
 });
+app.get('/test', function (req, res) {
+  res.render('test/layout', {myVar: { foo: 'bar' }});
+});
 
 var port = 5000;
 app.listen(port, () => console.log('running on ' + port));
