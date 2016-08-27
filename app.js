@@ -5,9 +5,6 @@ var app = module.exports = express();
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/app');
 
-app.get('/var', function (req, res) {
-  res.render('var/index', {myVar: 'global var'});
-});
 app.get('/block', function (req, res) {
   res.render('block/index', {myVar: { foo: 'bar' }});
 });
